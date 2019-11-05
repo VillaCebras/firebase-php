@@ -35,7 +35,7 @@ class ServiceAccount
     public function getSanitizedProjectId(): string
     {
         if (!$this->sanitizedProjectId) {
-            $this->sanitizedProjectId = \preg_replace('/[^A-Za-z0-9\-]/', '-', $this->projectId);
+            $this->sanitizedProjectId = \preg_replace('/[^A-Za-z0-9\-\.\:]/', '-', $this->projectId);
         }
 
         return $this->sanitizedProjectId;
